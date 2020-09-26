@@ -1,0 +1,85 @@
+====== 會員資料 ======
+1.新增會員
+協定:Post	URL: /user/create
+Input :
+    Account
+    Password
+    phone
+    email
+    address	
+Output:{
+	"Status":200,
+	"Message":"",
+	"Result":{
+        "IsOK":true
+    }
+}
+
+2.刪除會員
+協定:Post   URL: /user/delete
+Input:
+    Account  
+Output:
+{
+    "Status":200,
+    "Message":"",
+    "Result":{
+        "IsOK":ture
+    }
+}
+
+3.修改密碼
+協定:Post   URL: /user/pwd/change
+Input:
+    Account     
+    Password    
+    NewPassword 
+Output:{
+    "Status":200,
+    "Message":"",
+    "Result":{
+        "IsOK":true
+    }
+}
+
+4.驗證帳密
+協定:Get    URL: user/login
+Input
+    Account 
+    Password
+    
+成功:
+Output:{
+    "Status":200,
+    "Message":"",
+    "Result":{
+        "IsOK":true
+    }
+}
+
+失敗:
+Output:{
+    "Status":400,
+    "Message":"Login Failed",
+    "Result":null
+}
+
+====== 產品資料 ======
+1.所有產品
+協定:Get        URL: product/all
+Output
+{
+    "Status": "200",
+    "Message": "",
+    "Result": [
+        {
+            "user_id"
+            "product_url",
+            "product_img",
+            "product_title",
+            "price",
+            "amount",
+            "update_time"
+        }
+    ]
+}
