@@ -1,11 +1,28 @@
 <?php
-$config = [
-	"database"=> [
-		"host"=>"127.0.0.1",
-		"user"=>"root",
-		"password"=>"",
-		"db_name"=>"shop"
-    ],
-]
+
+$Is_Apple = true;
+
+if($Is_Apple){
+	$config = [
+		"database"=> [
+			"host"=>"127.0.0.1",
+			"port"=>8889,
+			"user"=>"root",
+			"password"=>"root",
+			"db_name"=>"shop"
+		],
+	];
+}else{
+	$config = [
+		"database"=> [
+			"host"=>"127.0.0.1",
+			"port"=> null,
+			"user"=>"root",
+			"password"=>"",
+			"db_name"=>"shop"
+		],
+	];
+}
+
 
 ?>

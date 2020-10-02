@@ -11,25 +11,50 @@ class Product extends controller{
     }
 
     function get($condition){
+
         
+        if((int)$condition != 0){
+            $id =  (int)$condition;
+           
+            $product = $this->database->select("product",[
+                "title",
+                "img",
+                "price"
+            ],[
+                "id" => $id,
+            ])[0];
+            if(empty($product)){
+                $this->res("400",null,"no product");
+                return;
+            }
+            $this->res("200",$product);
+            return;
+        }
+
         switch($condition){
             case 'all':
-
                 $product = $this->database->select("product","*");
 
-                $res = [
-                    "Status"=>"200",
-                    "Message"=>"",
-                    "Result"=>$product
-                ];
-                
-                print_r(json_encode($res));
-                return;
+                $this->res("200",$product);
+                return ;
+
+            case 'register':
+                header("location: http://127.0.0.1:5500/register/");
             default:
                 echo "<br>default: ".$condition."<br>";
                 break;
         }
 
+    }
+
+    private function res($status, $result, $message=""){
+        $res = [
+            "Status"=> $status,
+            "Message"=> $message,
+            "Result"=> $result
+        ];
+        
+        print_r(json_encode($res));
     }
 }
 

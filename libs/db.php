@@ -7,6 +7,7 @@ $database = new Medoo([
     'server' => $config['database']['host'],
     'username' => $config['database']['user'],
     'password' => $config['database']['password'],
+    'port'=> $config['database']['port'],
     'database_name' => $config['database']['db_name'],
     'charset' => 'utf8',
 ]);
