@@ -12,7 +12,8 @@ class Product extends controller{
 
     function get($condition){
 
-        
+
+        // condition 是/後的參數
         if((int)$condition != 0){
             $id =  (int)$condition;
            

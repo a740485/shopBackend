@@ -5,10 +5,22 @@ class controller{
 
     function __construct(){
         require_once(__DIR__."./../libs/db.php");
+
         $this->database = $database;
-        
-        header('Content-Type: application/json; charset=utf-8');
+
+        header('Access-Control-Allow-Methods: POST, GET, DELETE');
         header('Access-Control-Allow-Origin: *');
+        $method = $_SERVER['REQUEST_METHOD'];
+        switch($method){
+            case "POST":
+                header('Content-Type: application/json; charset=utf-8');
+                
+
+            default:
+                header('Content-Type: application/json; charset=utf-8');
+                
+        }
+        
     }
 
 

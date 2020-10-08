@@ -95,11 +95,10 @@ success:
 {
     "Status": "200",
     "Message": "",
-    "Result": [
-        {
+    "Result": {
             "IsOK":true
-        }
-    ]
+    }
+    
 }
 error:
 {
@@ -122,5 +121,19 @@ success:
         {
             "IsOK":true
         }
+    ]
+}
+
+2.取得使用者購物車資料
+協定:get   URL: /cart/:number
+Input :
+    user_id,
+Output
+success:
+{
+    "Status": "200",
+    "Message": "",
+    "Result": [
+        "IsOK":true
     ]
 }

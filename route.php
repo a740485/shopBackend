@@ -43,8 +43,9 @@ try {
         "/product/([a-zA-Z0-9-_]+)" => "Product",
         "/user/create" => "UserCreate",
         "/user/login" => "UserLogin",
-        "/cart" => "Cart",
-        "/cart/:number/:number" => "Cart",
+        "/cart" => "Cart",  // 新增購物車
+        "/cart/:number/:number" => "Cart", //購物車單項刪除
+        "/cart/:number"=> "Cart",   //查詢用者購物車資料
     ));
 } catch (\Throwable $e) {
     echo "toro catch error<br>";
