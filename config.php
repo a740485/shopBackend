@@ -1,6 +1,6 @@
 <?php
 
-$Is_Apple = true;
+$Is_Apple = false;
 
 if($Is_Apple){
 	$config = [
