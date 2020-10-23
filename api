@@ -137,3 +137,78 @@ success:
         "IsOK":true
     ]
 }
+
+====== 商家後臺資料 ======
+1.取得商家所有商品
+協定:get   URL: /backstage/:number
+Input :
+    user_id,
+Output
+success:
+{
+    "Status": "200",
+    "Message": "",
+    "Result": [
+        "id",
+        "img",
+        "title",
+        "price",
+        "amount",
+    ]
+}
+error:
+{
+    "Status": "400",
+    "Message": "Failed",
+    "Result": null
+}
+
+1.新增商品
+協定:Post	URL: /backstage
+Input :
+    user_id,
+    img,
+    title,
+    price,
+    amount
+Output:{
+	"Status":200,
+	"Message":"",
+	"Result":{
+        "IsOK":true
+    }
+}
+
+2.刪除商品
+協定:Delete   URL: /backstage/:number/:number
+Input :
+    user_id,
+    product_id
+Output
+success:
+{
+    "Status": "200",
+    "Message": "",
+    "Result": [
+        {
+            "IsOK":true
+        }
+    ]
+}
+
+2.刪除商品
+協定:Patch   URL: /backstage/:number/:number
+Input :
+    user_id,
+    product_id
+Output
+success:
+{
+    "Status": "200",
+    "Message": "",
+    "Result": [
+        {
+            "IsOK":true
+        }
+    ]
+}

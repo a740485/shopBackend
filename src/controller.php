@@ -8,7 +8,7 @@ class controller{
 
         $this->database = $database;
 
-        header('Access-Control-Allow-Methods: POST, GET, DELETE');
+        header('Access-Control-Allow-Methods: POST, GET, DELETE, PATCH');
         header('Access-Control-Allow-Origin: *');
         $method = $_SERVER['REQUEST_METHOD'];
         switch($method){

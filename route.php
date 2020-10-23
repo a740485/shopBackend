@@ -5,6 +5,7 @@ require 'vendor/autoload.php';
 require 'src/product.php';
 require 'src/user.php';
 require 'src/cart.php';
+require 'src/backstage.php';
 
 // phpinfo();
 
@@ -46,6 +47,8 @@ try {
         "/cart" => "Cart",  // 新增購物車
         "/cart/:number/:number" => "Cart", //購物車單項刪除
         "/cart/:number"=> "Cart",   //查詢用者購物車資料
+        "/backstage/:number"=> "Backstage", //取得商家所有商品
+        "/backstage" =>"Backstage", // 新增商品
     ));
 } catch (\Throwable $e) {
     echo "toro catch error<br>";
